@@ -1,0 +1,36 @@
+# --- System & environment ---
+.DS_Store
+.env
+*.log
+
+# --- Python backend ---
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.ipynb_checkpoints/
+*.ipynb
+
+# --- Node / React frontend ---
+node_modules/
+build/
+dist/
+*.lock
+*.cache
+
+# --- Data & generated assets ---
+*.csv
+*.json
+*.wav
+
+# --- Virtual environments ---
+venv/
+.env/
+.venv/
+env/
+
+# --- IDE & editor junk ---
+.vscode/
+.idea/
+*.swp
+*.swo
