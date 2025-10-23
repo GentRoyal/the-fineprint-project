@@ -1,27 +1,25 @@
 version: "3.9"
 
 services:
-  backend:
-    build: .
+  tnc_backend:
+    build:
+      context: .
+      dockerfile: Dockerfile
     container_name: tnc_backend
-    environment:
-      GROQ_API_KEY: ${GROQ_API_KEY}
-      GROQ_MODEL: ${GROQ_MODEL}
-      CHUNK_SIZE: ${CHUNK_SIZE}
-      CHUNK_OVERLAP: ${CHUNK_OVERLAP}
-      EMBEDDING_MODEL: ${CHUNK_SIZE}
-      PINECONE_API_KEY: ${PINECONE_API_KEY}
-      GEMINI_API_KEY: ${GEMINI_API_KEY}
-    expose:
-      - "8000"  # Only exposed to Nginx internally
+    restart: always
+    ports:
+      - "8000:8000"
+    env_file:
+      - .env
 
   nginx:
-    image: nginx:stable-alpine
+    image: nginx:latest
     container_name: tnc_nginx
+    restart: always
     ports:
       - "80:80"
     volumes:
-      - ./frontend:/usr/share/nginx/html:ro
+      - ./frontend:/usr/share/nginx/html/static:ro
       - ./nginx.conf:/etc/nginx/conf.d/default.conf:ro
     depends_on:
-      - backend
+      - tnc_backend
