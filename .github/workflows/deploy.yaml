@@ -31,11 +31,12 @@ jobs:
     - name: Deploy Docker container on EC2
       uses: appleboy/ssh-action@v0.1.7
       with:
-        host: ${{ secrets.EC2_HOST }}
-        username: ${{ secrets.EC2_USER }}
-        key: ${{ secrets.EC2_SSH_KEY }}
-        script: |
-          cd ~/tnc_app
-          docker compose down
-          docker compose build
-          docker compose up -d
+          host: ${{ secrets.EC2_HOST }}
+          username: ${{ secrets.EC2_USER }}
+          key: ${{ secrets.EC2_SSH_KEY }}
+          script: |
+            cd ~/tnc_app
+            docker compose down --remove-orphans
+            docker rm -f tnc_backend || true
+            docker compose build --no-cache
+            docker compose up -d
