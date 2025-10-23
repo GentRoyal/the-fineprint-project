@@ -1,0 +1,26 @@
+# Core backend
+fastapi==0.116.1
+uvicorn==0.35.0
+pydantic==2.11.7
+python-dotenv==1.1.1
+requests>=2.32.5,<3
+
+# Google Generative AI SDK
+google-genai==0.5.0
+
+# LangChain + text utils
+langchain==0.3.27
+langchain-community==0.3.30
+langchain-core==0.3.78
+langchain-groq==0.3.8
+langchain-huggingface==0.3.1
+
+# PDF/Text extraction
+pdfplumber==0.11.7
+PyPDF2==3.0.1
+
+python-multipart==0.0.20
+
+pinecone==7.3.0
+pinecone-plugin-assistant==1.8.0
+pinecone-plugin-interface==0.0.7

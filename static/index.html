@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms Transparency Tracker</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        .animate-spin {
+            animation: spin 1s linear infinite;
+        }
+        .fade-in {
+            animation: fadeIn 0.3s ease-in;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .progress-bar {
+            transition: width 0.3s ease;
+        }
+    </style>
+</head>
+<body class="min-h-screen bg-slate-50">
+    <!-- Navigation Header -->
+    <nav class="bg-white border-b border-slate-200 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 bg-teal-600 rounded-lg flex items-center justify-center">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+                        </svg>
+                    </div>
+                    <span class="text-slate-900 font-semibold">Terms Transparency Tracker</span>
+                </div>
+
+                <div class="hidden md:flex items-center gap-8">
+                    <a href="#features" class="text-slate-700 hover:text-slate-900 transition-colors">Features</a>
+                    <a href="#how-it-works" class="text-slate-700 hover:text-slate-900 transition-colors">How It Works</a>
+                    <a href="#pricing" class="text-slate-700 hover:text-slate-900 transition-colors">Pricing</a>
+                </div>
+
+                <div class="flex items-center gap-3">
+                    <button class="px-4 py-2 text-slate-700 hover:text-slate-900 transition-colors">Log In</button>
+                    <button class="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors">Sign Up</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto px-4 py-12 sm:px-6 lg:px-8">
+        <!-- Hero Section -->
+        <div id="heroSection" class="mb-16">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <span class="inline-block bg-teal-50 text-teal-700 border border-teal-200 rounded-full px-4 py-1 text-sm mb-6">AI-Powered Analysis</span>
+                    <h1 class="text-4xl md:text-5xl font-bold text-slate-900 mb-6">Understand Legal Documents in Seconds</h1>
+                    <p class="text-slate-600 text-lg mb-8 leading-relaxed">
+                        Upload or paste any Terms & Conditions or Privacy Policy and get instant insights into potentially harmful clauses that could affect your rights.
+                    </p>
+                    
+                    <div class="grid sm:grid-cols-3 gap-6 mb-8">
+                        <div class="flex flex-col items-start gap-2">
+                            <div class="w-12 h-12 bg-teal-50 rounded-lg flex items-center justify-center">
+                                <svg class="w-6 h-6 text-teal-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                                </svg>
+                            </div>
+                            <span class="text-sm text-slate-700 font-medium">Smart Detection</span>
+                        </div>
+                        <div class="flex flex-col items-start gap-2">
+                            <div class="w-12 h-12 bg-orange-50 rounded-lg flex items-center justify-center">
+                                <svg class="w-6 h-6 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path>
+                                </svg>
+                            </div>
+                            <span class="text-sm text-slate-700 font-medium">Risk Assessment</span>
+                        </div>
+                        <div class="flex flex-col items-start gap-2">
+                            <div class="w-12 h-12 bg-blue-50 rounded-lg flex items-center justify-center">
+                                <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+                                </svg>
+                            </div>
+                            <span class="text-sm text-slate-700 font-medium">Detailed Reports</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative">
+                    <div class="relative bg-white rounded-2xl shadow-2xl p-8 border border-slate-200">
+                        <div class="absolute -top-4 -right-4 w-24 h-24 bg-teal-100 rounded-xl -z-10"></div>
+                        <div class="absolute -bottom-4 -left-4 w-32 h-32 bg-orange-50 rounded-xl -z-10"></div>
+                        
+                        <div class="space-y-4">
+                            <div class="flex items-center gap-3 pb-4 border-b border-slate-200">
+                                <div class="w-10 h-10 bg-teal-600 rounded-lg flex items-center justify-center">
+                                    <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                                    </svg>
+                                </div>
+                                <div class="flex-1">
+                                    <div class="h-3 bg-slate-200 rounded w-3/4 mb-2"></div>
+                                    <div class="h-2 bg-slate-100 rounded w-1/2"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="space-y-3">
+                                <div class="flex gap-3 p-3 bg-red-50 border border-red-200 rounded-lg">
+                                    <svg class="w-5 h-5 text-red-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path>
+                                    </svg>
+                                    <div class="flex-1 space-y-2">
+                                        <div class="h-2 bg-red-200 rounded w-full"></div>
+                                        <div class="h-2 bg-red-200 rounded w-4/5"></div>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex gap-3 p-3 bg-orange-50 border border-orange-200 rounded-lg">
+                                    <svg class="w-5 h-5 text-orange-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                    </svg>
+                                    <div class="flex-1 space-y-2">
+                                        <div class="h-2 bg-orange-200 rounded w-full"></div>
+                                        <div class="h-2 bg-orange-200 rounded w-3/4"></div>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex gap-3 p-3 bg-blue-50 border border-blue-200 rounded-lg">
+                                    <svg class="w-5 h-5 text-blue-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                    </svg>
+                                    <div class="flex-1 space-y-2">
+                                        <div class="h-2 bg-blue-200 rounded w-full"></div>
+                                        <div class="h-2 bg-blue-200 rounded w-2/3"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Upload/Paste Section -->
+        <div class="space-y-8">
+            <div class="bg-white border border-slate-200 shadow-lg rounded-xl">
+                <div class="p-8">
+                    <!-- Podcast Mode Toggle -->
+                    <div class="flex items-center justify-between p-4 mb-6 bg-gradient-to-r from-teal-50 to-blue-50 rounded-xl border border-teal-200">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 bg-teal-600 rounded-lg flex items-center justify-center">
+                                <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <p class="text-slate-900 font-medium">Podcast Mode</p>
+                                <p class="text-sm text-slate-600">Generate an audio explanation instead of text analysis</p>
+                            </div>
+                        </div>
+                        
+                        <button id="podcastToggle" class="relative inline-flex h-8 w-14 items-center rounded-full transition-colors flex-shrink-0 bg-gray-300" onclick="togglePodcastMode()">
+                            <span id="podcastToggleSlider" class="inline-block h-6 w-6 transform rounded-full bg-white shadow-md transition-transform translate-x-1"></span>
+                        </button>
+                    </div>
+
+                    <!-- Tabs -->
+                    <!-- Tabs -->
+                    <div class="mb-8">
+                        <div class="grid grid-cols-2 gap-2 bg-slate-100 p-1 rounded-lg mb-8">
+                            <button id="uploadTab" class="flex items-center justify-center gap-2 px-4 py-3 rounded-md bg-white shadow-sm font-medium text-slate-900" onclick="switchTab('upload')">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"></path>
+                                </svg>
+                                Upload Document
+                            </button>
+                            <button id="pasteTab" class="flex items-center justify-center gap-2 px-4 py-3 rounded-md font-medium text-slate-700" onclick="switchTab('paste')">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                                </svg>
+                                Paste Text
+                            </button>
+                        </div>
+
+                        <!-- Upload Content -->
+                        <div id="uploadContent">
+                            <div id="dropZone" class="border-2 border-dashed rounded-xl p-16 text-center transition-all duration-200 cursor-pointer border-slate-300 bg-slate-50 hover:border-teal-400 hover:bg-teal-50/50">
+                                <input type="file" id="fileInput" class="hidden" accept=".pdf,.docx,.txt" onchange="handleFileSelect(event)">
+                                <label for="fileInput" class="cursor-pointer">
+                                    <div class="flex flex-col items-center gap-4">
+                                        <div class="w-16 h-16 bg-teal-600 rounded-xl flex items-center justify-center">
+                                            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"></path>
+                                            </svg>
+                                        </div>
+                                        <div>
+                                            <p class="text-slate-900">
+                                                <span class="text-teal-600 font-medium">Click to upload</span> or drag and drop
+                                            </p>
+                                            <p class="text-sm text-slate-500 mt-2">PDF, DOCX, or TXT • Maximum file size 10MB</p>
+                                        </div>
+                                    </div>
+                                </label>
+                            </div>
+
+                            <div id="filePreview" class="hidden bg-slate-50 rounded-xl p-6 border border-slate-200 mt-6">
+                                <div class="flex items-center justify-between">
+                                    <div class="flex items-center gap-4">
+                                        <div class="w-12 h-12 bg-teal-600 rounded-lg flex items-center justify-center">
+                                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                                            </svg>
+                                        </div>
+                                        <div>
+                                            <p id="fileName" class="text-slate-900 font-medium"></p>
+                                            <p id="fileSize" class="text-sm text-slate-600"></p>
+                                        </div>
+                                    </div>
+                                    <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                    </svg>
+                                </div>
+                                <div id="uploadProgressContainer" class="mt-4 hidden">
+                                    <div class="w-full bg-slate-200 rounded-full h-2">
+                                        <div id="uploadProgress" class="bg-teal-600 h-2 rounded-full progress-bar" style="width: 0%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Paste Content -->
+                        <div id="pasteContent" class="hidden">
+                            <textarea id="pasteTextarea" placeholder="Paste your Terms & Conditions or Privacy Policy text here..." class="w-full min-h-[400px] resize-none border-2 border-slate-300 focus:border-teal-500 rounded-xl bg-slate-50 p-4 outline-none"></textarea>
+                            <p class="text-sm text-slate-500 mt-3 flex items-center gap-2">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                </svg>
+                                Paste the full text of the legal document you want to analyze
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Action Buttons -->
+                    <div class="flex gap-4">
+                        <button id="analyzeBtn" onclick="handleAnalyze()" disabled class="flex-1 h-12 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-medium transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2">
+                            <svg id="analyzeIcon" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                            </svg>
+                            <span id="analyzeBtnText">Analyze Document</span>
+                        </button>
+                        <button id="clearBtn" onclick="handleClear()" class="hidden h-12 px-6 border border-slate-300 hover:bg-slate-50 rounded-lg font-medium transition-colors flex items-center gap-2">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path>
+                            </svg>
+                            Clear
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Audio Player Section -->
+            <div id="audioPlayerSection" class="hidden fade-in bg-gradient-to-br from-teal-50 to-blue-50 border border-teal-200 shadow-lg rounded-xl">
+                <div class="p-8">
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="w-12 h-12 bg-teal-600 rounded-xl flex items-center justify-center">
+                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <h2 class="text-xl font-bold text-slate-900">Podcast Generated</h2>
+                            <p class="text-sm text-slate-600">Listen to the audio explanation of the document</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-xl p-6 shadow-sm">
+                        <audio id="audioPlayer" class="hidden"></audio>
+                        
+                        <div class="flex items-center gap-4">
+                            <button id="playPauseBtn" onclick="togglePlayPause()" class="w-14 h-14 rounded-full bg-teal-600 hover:bg-teal-700 flex items-center justify-center transition-colors">
+                                <svg id="playIcon" class="w-6 h-6 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M8 5v14l11-7z"></path>
+                                </svg>
+                                <svg id="pauseIcon" class="w-6 h-6 text-white hidden" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M6 4h4v16H6V4zm8 0h4v16h-4V4z"></path>
+                                </svg>
+                            </button>
+
+                            <div class="flex-1 flex items-center gap-2">
+                                <svg class="w-5 h-5 text-slate-400" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"></path>
+                                </svg>
+                                <div class="flex-1 h-2 bg-slate-200 rounded-full overflow-hidden">
+                                    <div id="audioProgress" class="h-full bg-gradient-to-r from-teal-600 to-blue-600 rounded-full transition-all duration-300" style="width: 0%"></div>
+                                </div>
+                            </div>
+
+                            <a id="downloadBtn" href="#" download="podcast.wav" class="text-sm text-teal-600 hover:text-teal-700 px-4 py-2 border border-teal-300 rounded-lg hover:bg-teal-50 transition-colors">
+                                Download
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Results Section -->
+            <div id="resultsSection" class="hidden space-y-8">
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                    <div>
+                        <h2 class="text-2xl font-bold text-slate-900 mb-2">Analysis Results</h2>
+                        <p id="resultsCount" class="text-slate-600"></p>
+                    </div>
+                    <div class="flex gap-2">
+                        <span id="highRiskBadge" class="inline-block bg-red-50 text-red-700 border border-red-200 rounded-full px-3 py-1 text-sm font-medium"></span>
+                        <span id="mediumRiskBadge" class="inline-block bg-orange-50 text-orange-700 border border-orange-200 rounded-full px-3 py-1 text-sm font-medium"></span>
+                        <span id="lowRiskBadge" class="inline-block bg-blue-50 text-blue-700 border border-blue-200 rounded-full px-3 py-1 text-sm font-medium"></span>
+                    </div>
+                </div>
+
+                <div id="resultsContainer" class="space-y-4"></div>
+
+                <div class="bg-slate-50 border border-slate-200 rounded-xl">
+                    <div class="p-8">
+                        <div class="flex flex-col sm:flex-row items-center justify-between gap-6">
+                            <div class="flex items-center gap-4">
+                                <div class="w-14 h-14 bg-teal-600 rounded-xl flex items-center justify-center">
+                                    <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h3 class="text-lg font-semibold text-slate-900 mb-1">Need to analyze another document?</h3>
+                                    <p class="text-sm text-slate-600">Upload a new file or paste different text to continue</p>
+                                </div>
+                            </div>
+                            <button onclick="handleClear()" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-medium transition-colors whitespace-nowrap flex items-center gap-2">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"></path>
+                                </svg>
+                                Analyze Another
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="mt-20 py-12 bg-white border-t border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+                <div class="flex items-center gap-3">
+                    <div class="w-8 h-8 bg-teal-600 rounded-lg flex items-center justify-center">
+                        <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+                        </svg>
+                    </div>
+                    <span class="text-slate-700 font-medium">Terms Transparency Tracker</span>
+                </div>
+                <p class="text-sm text-slate-600">
+                    © 2025 Terms Transparency Tracker. Helping you understand legal documents better.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Configuration
+        const API_BASE_URL = 'http://localhost:8000';
+
+        // State
+        let selectedFile = null;
+        let podcastMode = false;
+        let isPlaying = false;
+        let audioUrl = null;
+
+        // Tab switching
+        function switchTab(tab) {
+            const uploadTab = document.getElementById('uploadTab');
+            const pasteTab = document.getElementById('pasteTab');
+            const uploadContent = document.getElementById('uploadContent');
+            const pasteContent = document.getElementById('pasteContent');
+
+            if (tab === 'upload') {
+                uploadTab.classList.add('bg-white', 'shadow-sm', 'text-slate-900');
+                uploadTab.classList.remove('text-slate-700');
+                pasteTab.classList.remove('bg-white', 'shadow-sm', 'text-slate-900');
+                pasteTab.classList.add('text-slate-700');
+                uploadContent.classList.remove('hidden');
+                pasteContent.classList.add('hidden');
+            } else {
+                pasteTab.classList.add('bg-white', 'shadow-sm', 'text-slate-900');
+                pasteTab.classList.remove('text-slate-700');
+                uploadTab.classList.remove('bg-white', 'shadow-sm', 'text-slate-900');
+                uploadTab.classList.add('text-slate-700');
+                pasteContent.classList.remove('hidden');
+                uploadContent.classList.add('hidden');
+            }
+            
+            updateAnalyzeButton();
+        }
+
+        // Podcast mode toggle
+        function togglePodcastMode() {
+            podcastMode = !podcastMode;
+            const toggle = document.getElementById('podcastToggle');
+            const slider = document.getElementById('podcastToggleSlider');
+            const btnText = document.getElementById('analyzeBtnText');
+            const analyzeIcon = document.getElementById('analyzeIcon');
+
+            if (podcastMode) {
+                toggle.classList.remove('bg-gray-300');
+                toggle.classList.add('bg-teal-600');
+                slider.classList.remove('translate-x-1');
+                slider.classList.add('translate-x-7');
+                btnText.textContent = 'Generate Podcast';
+                analyzeIcon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z"></path>';
+            } else {
+                toggle.classList.add('bg-gray-300');
+                toggle.classList.remove('bg-teal-600');
+                slider.classList.add('translate-x-1');
+                slider.classList.remove('translate-x-7');
+                btnText.textContent = 'Analyze Document';
+                analyzeIcon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>';
+            }
+        }
+
+        // File handling
+        function handleFileSelect(event) {
+            const file = event.target.files[0];
+            if (file) {
+                selectedFile = file;
+                displayFilePreview(file);
+                simulateUpload();
+                updateAnalyzeButton();
+            }
+        }
+
+        function displayFilePreview(file) {
+            document.getElementById('fileName').textContent = file.name;
+            document.getElementById('fileSize').textContent = (file.size / 1024).toFixed(2) + ' KB';
+            document.getElementById('filePreview').classList.remove('hidden');
+            document.getElementById('clearBtn').classList.remove('hidden');
+        }
+
+        function simulateUpload() {
+            const progressContainer = document.getElementById('uploadProgressContainer');
+            const progressBar = document.getElementById('uploadProgress');
+            
+            progressContainer.classList.remove('hidden');
+            let progress = 0;
+            
+            const interval = setInterval(() => {
+                progress += 10;
+                progressBar.style.width = progress + '%';
+                
+                if (progress >= 100) {
+                    clearInterval(interval);
+                    setTimeout(() => {
+                        progressContainer.classList.add('hidden');
+                    }, 500);
+                }
+            }, 100);
+        }
+
+        // Drag and drop
+        const dropZone = document.getElementById('dropZone');
+
+        dropZone.addEventListener('dragover', (e) => {
+            e.preventDefault();
+            dropZone.classList.add('border-teal-500', 'bg-teal-50');
+            dropZone.classList.remove('border-slate-300', 'bg-slate-50');
+        });
+
+        dropZone.addEventListener('dragleave', () => {
+            dropZone.classList.remove('border-teal-500', 'bg-teal-50');
+            dropZone.classList.add('border-slate-300', 'bg-slate-50');
+        });
+
+        dropZone.addEventListener('drop', (e) => {
+            e.preventDefault();
+            dropZone.classList.remove('border-teal-500', 'bg-teal-50');
+            dropZone.classList.add('border-slate-300', 'bg-slate-50');
+            
+            const file = e.dataTransfer.files[0];
+            if (file && (file.type === 'application/pdf' || 
+                        file.type === 'application/vnd.openxmlformats-officedocument.wordprocessingml.document' || 
+                        file.type === 'text/plain')) {
+                selectedFile = file;
+                displayFilePreview(file);
+                simulateUpload();
+                updateAnalyzeButton();
+            }
+        });
+
+        // Update analyze button state
+        function updateAnalyzeButton() {
+            const pastedText = document.getElementById('pasteTextarea').value;
+            const analyzeBtn = document.getElementById('analyzeBtn');
+            
+            if (selectedFile || pastedText.trim()) {
+                analyzeBtn.disabled = false;
+                analyzeBtn.classList.remove('opacity-50', 'cursor-not-allowed');
+            } else {
+                analyzeBtn.disabled = true;
+                analyzeBtn.classList.add('opacity-50', 'cursor-not-allowed');
+            }
+        }
+
+        document.getElementById('pasteTextarea').addEventListener('input', () => {
+            updateAnalyzeButton();
+            const pastedText = document.getElementById('pasteTextarea').value;
+            if (pastedText.trim()) {
+                document.getElementById('clearBtn').classList.remove('hidden');
+            }
+        });
+
+        // Analyze document
+        async function handleAnalyze() {
+            const analyzeBtn = document.getElementById('analyzeBtn');
+            const btnText = document.getElementById('analyzeBtnText');
+            const analyzeIcon = document.getElementById('analyzeIcon');
+            const pastedText = document.getElementById('pasteTextarea').value;
+
+            if (!selectedFile && !pastedText.trim()) return;
+
+            // Update button to loading state
+            analyzeBtn.disabled = true;
+            analyzeIcon.innerHTML = '';
+            analyzeIcon.innerHTML = '<div class="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin"></div>';
+            btnText.textContent = podcastMode ? 'Generating Podcast...' : 'Analyzing Document...';
+
+            // Hide hero section
+            document.getElementById('heroSection').style.display = 'none';
+
+            try {
+                let response;
+
+                if (podcastMode) {
+                    // Podcast Mode
+                    if (selectedFile) {
+                        const formData = new FormData();
+                        formData.append('file', selectedFile);
+                        
+                        response = await fetch(`${API_BASE_URL}/conversation_clauses_file`, {
+                            method: 'POST',
+                            body: formData,
+                        });
+                    } else {
+                        response = await fetch(`${API_BASE_URL}/conversation_clauses`, {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json',
+                            },
+                            body: JSON.stringify({ text: pastedText }),
+                        });
+                    }
+
+                    if (!response.ok) {
+                        throw new Error(`API Error: ${response.statusText}`);
+                    }
+
+                    // Handle audio response
+                    const blob = await response.blob();
+                    const url = URL.createObjectURL(blob);
+                    displayAudioPlayer(url);
+                } else {
+                    // Regular Analysis Mode
+                    if (selectedFile) {
+                        const formData = new FormData();
+                        formData.append('file', selectedFile);
+                        
+                        response = await fetch(`${API_BASE_URL}/get_clauses`, {
+                            method: 'POST',
+                            body: formData,
+                        });
+                    } else {
+                        response = await fetch(`${API_BASE_URL}/get_clauses`, {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json',
+                            },
+                            body: JSON.stringify({ text: pastedText }),
+                        });
+                    }
+
+                    if (!response.ok) {
+                        throw new Error(`API Error: ${response.statusText}`);
+                    }
+
+                    const data = await response.json();
+                    
+                    // Transform API response
+                    const transformedResults = data.clauses?.map((clause, index) => ({
+                        id: clause.id || String(index + 1),
+                        text: clause.text || clause.clause_text || '',
+                        riskLevel: (clause.risk_level || clause.severity || 'medium').toLowerCase(),
+                        explanation: clause.explanation || clause.reason || ''
+                    })) || [];
+
+                    displayResults(transformedResults);
+                }
+            } catch (error) {
+                console.error('Error analyzing document:', error);
+                alert('Failed to analyze document. Please make sure your API is running on ' + API_BASE_URL);
+                document.getElementById('heroSection').style.display = 'block';
+            } finally {
+                // Reset button state
+                analyzeBtn.disabled = false;
+                if (podcastMode) {
+                    analyzeIcon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z"></path>';
+                    btnText.textContent = 'Generate Podcast';
+                } else {
+                    analyzeIcon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>';
+                    btnText.textContent = 'Analyze Document';
+                }
+            }
+        }
+
+        // Display audio player
+        function displayAudioPlayer(url) {
+            audioUrl = url;
+            const audioPlayer = document.getElementById('audioPlayer');
+            const audioPlayerSection = document.getElementById('audioPlayerSection');
+            const downloadBtn = document.getElementById('downloadBtn');
+
+            audioPlayer.src = url;
+            downloadBtn.href = url;
+            audioPlayerSection.classList.remove('hidden');
+            document.getElementById('resultsSection').classList.add('hidden');
+
+            // Audio event listeners
+            audioPlayer.addEventListener('timeupdate', updateProgress);
+            audioPlayer.addEventListener('ended', () => {
+                isPlaying = false;
+                updatePlayPauseButton();
+            });
+        }
+
+        // Audio controls
+        function togglePlayPause() {
+            const audioPlayer = document.getElementById('audioPlayer');
+            
+            if (isPlaying) {
+                audioPlayer.pause();
+                isPlaying = false;
+            } else {
+                audioPlayer.play();
+                isPlaying = true;
+            }
+            
+            updatePlayPauseButton();
+        }
+
+        function updatePlayPauseButton() {
+            const playIcon = document.getElementById('playIcon');
+            const pauseIcon = document.getElementById('pauseIcon');
+            
+            if (isPlaying) {
+                playIcon.classList.add('hidden');
+                pauseIcon.classList.remove('hidden');
+            } else {
+                playIcon.classList.remove('hidden');
+                pauseIcon.classList.add('hidden');
+            }
+        }
+
+        function updateProgress() {
+            const audioPlayer = document.getElementById('audioPlayer');
+            const audioProgress = document.getElementById('audioProgress');
+            
+            if (audioPlayer.duration) {
+                const progress = (audioPlayer.currentTime / audioPlayer.duration) * 100;
+                audioProgress.style.width = progress + '%';
+            }
+        }
+
+        // Display results
+        function displayResults(results) {
+            document.getElementById('audioPlayerSection').classList.add('hidden');
+            document.getElementById('resultsSection').classList.remove('hidden');
+            
+            const resultsCount = document.getElementById('resultsCount');
+            const highRiskBadge = document.getElementById('highRiskBadge');
+            const mediumRiskBadge = document.getElementById('mediumRiskBadge');
+            const lowRiskBadge = document.getElementById('lowRiskBadge');
+            const resultsContainer = document.getElementById('resultsContainer');
+
+            resultsCount.textContent = `We found ${results.length} potential issue${results.length !== 1 ? 's' : ''} in this document`;
+            
+            const highRisk = results.filter(r => r.riskLevel === 'high').length;
+            const mediumRisk = results.filter(r => r.riskLevel === 'medium').length;
+            const lowRisk = results.filter(r => r.riskLevel === 'low').length;
+
+            highRiskBadge.textContent = `${highRisk} High Risk`;
+            mediumRiskBadge.textContent = `${mediumRisk} Medium`;
+            lowRiskBadge.textContent = `${lowRisk} Low`;
+
+            resultsContainer.innerHTML = '';
+
+            results.forEach((clause, index) => {
+                const clauseCard = createClauseCard(clause, index);
+                resultsContainer.appendChild(clauseCard);
+            });
+        }
+
+        function createClauseCard(clause, index) {
+            const card = document.createElement('div');
+            card.className = 'bg-white border border-slate-200 shadow-md hover:shadow-lg transition-shadow rounded-xl fade-in';
+            card.style.animationDelay = `${index * 0.1}s`;
+
+            const riskColors = {
+                high: {
+                    bg: 'bg-red-100',
+                    icon: 'text-red-600',
+                    badge: 'bg-red-50 text-red-700 border-red-200',
+                    border: 'border-red-300',
+                    text: 'text-red-900',
+                    subtext: 'text-red-800',
+                    containerBg: 'bg-red-50',
+                    containerBorder: 'border-red-200'
+                },
+                medium: {
+                    bg: 'bg-orange-100',
+                    icon: 'text-orange-600',
+                    badge: 'bg-orange-50 text-orange-700 border-orange-200',
+                    border: 'border-orange-300',
+                    text: 'text-orange-900',
+                    subtext: 'text-orange-800',
+                    containerBg: 'bg-orange-50',
+                    containerBorder: 'border-orange-200'
+                },
+                low: {
+                    bg: 'bg-blue-100',
+                    icon: 'text-blue-600',
+                    badge: 'bg-blue-50 text-blue-700 border-blue-200',
+                    border: 'border-blue-300',
+                    text: 'text-blue-900',
+                    subtext: 'text-blue-800',
+                    containerBg: 'bg-blue-50',
+                    containerBorder: 'border-blue-200'
+                }
+            };
+
+            const colors = riskColors[clause.riskLevel] || riskColors.medium;
+
+            const iconPath = clause.riskLevel === 'high' 
+                ? 'M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z'
+                : 'M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z';
+
+            card.innerHTML = `
+                <div class="p-8">
+                    <div class="flex items-start gap-6">
+                        <div class="flex-shrink-0 p-3 rounded-lg ${colors.bg}">
+                            <svg class="w-6 h-6 ${colors.icon}" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="${iconPath}"></path>
+                            </svg>
+                        </div>
+
+                        <div class="flex-1 space-y-4">
+                            <div>
+                                <span class="inline-block ${colors.badge} border rounded-full px-3 py-1 text-xs font-semibold mb-4">
+                                    ${clause.riskLevel.toUpperCase()} RISK
+                                </span>
+                                <div class="border-l-4 ${colors.border} pl-6 py-2">
+                                    <p class="text-slate-700 italic">
+                                        "${clause.text}"
+                                    </p>
+                                </div>
+                            </div>
+                            
+                            <div class="rounded-lg p-4 border ${colors.containerBg} ${colors.containerBorder}">
+                                <p class="text-sm mb-1 ${colors.text} font-semibold">
+                                    Why this matters:
+                                </p>
+                                <p class="${colors.subtext}">
+                                    ${clause.explanation}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+
+            return card;
+        }
+
+        // Clear all
+        function handleClear() {
+            selectedFile = null;
+            document.getElementById('fileInput').value = '';
+            document.getElementById('pasteTextarea').value = '';
+            document.getElementById('filePreview').classList.add('hidden');
+            document.getElementById('resultsSection').classList.add('hidden');
+            document.getElementById('audioPlayerSection').classList.add('hidden');
+            document.getElementById('clearBtn').classList.add('hidden');
+            document.getElementById('heroSection').style.display = 'block';
+            
+            const audioPlayer = document.getElementById('audioPlayer');
+            if (audioPlayer.src) {
+                audioPlayer.pause();
+                audioPlayer.currentTime = 0;
+                audioPlayer.src = '';
+            }
+            
+            if (audioUrl) {
+                URL.revokeObjectURL(audioUrl);
+                audioUrl = null;
+            }
+            
+            isPlaying = false;
+            updatePlayPauseButton();
+            updateAnalyzeButton();
+        }
+    </script>
+</body>
+</html>
